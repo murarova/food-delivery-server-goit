@@ -16,9 +16,9 @@ const requestHendler = (request, response) => {
 		default:
 			router.default(request, response);
 	}
-	response.end();
 };
 
-const server = http.createServer(requestHendler).listen(port);
+const server = http.createServer().listen(port);
+server.on("request", requestHendler);
 
 module.exports = server;
