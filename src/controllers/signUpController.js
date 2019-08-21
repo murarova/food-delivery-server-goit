@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 
-const signUpRoute = (request, response) => {
+const signUpController = (request, response) => {
   if (request.method === 'POST') {
     let body = '';
     const pathUsers = path.resolve('src/db/users/');
@@ -49,4 +49,4 @@ const signUpRoute = (request, response) => {
       .on('end', createUserAndSendResponse);
   }
 };
-module.exports = signUpRoute;
+module.exports = signUpController;
